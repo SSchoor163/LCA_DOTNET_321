@@ -1,0 +1,14 @@
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\bin\Debug\netcoreapp2.1\MyFirstAPI.deps.json
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\bin\Debug\netcoreapp2.1\MyFirstAPI.runtimeconfig.json
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\bin\Debug\netcoreapp2.1\MyFirstAPI.runtimeconfig.dev.json
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\bin\Debug\netcoreapp2.1\MyFirstAPI.dll
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\bin\Debug\netcoreapp2.1\MyFirstAPI.pdb
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.csprojAssemblyReference.cache
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.csproj.CoreCompileInputs.cache
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.RazorAssemblyInfo.cache
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.RazorAssemblyInfo.cs
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.AssemblyInfoInputs.cache
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.AssemblyInfo.cs
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.dll
+C:\Users\Steven Schoor\Documents\DevFolder\MyFirstAPI\MyFirstAPI\MyFirstAPI\obj\Debug\netcoreapp2.1\MyFirstAPI.pdb

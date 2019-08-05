@@ -11801,9 +11801,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Steven Schoor\\Documents\\DevFolder\\LCA_DOTNET_321\\LCA_DOTNET_321\\MyFirstAPI\\MyFirstAPI.csproj",
-      "projectName": "MyFirstAPI",
-      "projectPath": "C:\\Users\\Steven Schoor\\Documents\\DevFolder\\LCA_DOTNET_321\\LCA_DOTNET_321\\MyFirstAPI\\MyFirstAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Steven Schoor\\Documents\\DevFolder\\LCA_DOTNET_321\\LCA_DOTNET_321\\MyFirstAPI\\W1D2_MyFirstAPI.csproj",
+      "projectName": "W1D2_MyFirstAPI",
+      "projectPath": "C:\\Users\\Steven Schoor\\Documents\\DevFolder\\LCA_DOTNET_321\\LCA_DOTNET_321\\MyFirstAPI\\W1D2_MyFirstAPI.csproj",
       "packagesPath": "C:\\Users\\Steven Schoor\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Steven Schoor\\Documents\\DevFolder\\LCA_DOTNET_321\\LCA_DOTNET_321\\MyFirstAPI\\obj\\",
       "projectStyle": "PackageReference",

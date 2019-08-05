@@ -64,14 +64,23 @@ namespace MyFirstAPI.Controllers
         // ask jeffry about postman's id creation all being 0, despite a random generation being there.
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] Person newPerson)
         {
+            var person = _people.FirstOrDefault(p => p.Id == id);
+           
+            person.Name = newPerson.Name;
+            person.HairColor = newPerson.HairColor;
+            return Ok(person);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var person = _people.FirstOrDefault(p => p.Id == id);
+            if (person == null) return NotFound();
+            return Ok(person);
+
         }
     }
 }

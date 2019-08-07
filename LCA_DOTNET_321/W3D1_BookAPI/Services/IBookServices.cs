@@ -8,17 +8,13 @@ using System.IO;
 
 namespace W3D1_BookAPI.Services
 {
-    public class BoookContext: DbContext
+    public interface IBookServices
     {
-        public DbSet<Book> books { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            DirectoryInfo ExecutiveDirectory = new DirectoryInfo(AppContext.BaseDirectory);
-            DirectoryInfo ProjectBase = ExecutiveDirectory.Parent.Parent.Parent;
-            string DatabaseFile = Path.Combine(ProjectBase.FullName + "Books.db");
-            optionsBuilder.UseSqlite("Data Source =" + DatabaseFile);
-        }
+        IEnumerable<Book> GetAll();
+        Book GetId(int Id);
+        Book Add(Book NewBook);
+        Book Update(Book UpdatedBook);
+        void Remove(Book DeleteBook);
 
     }
 }

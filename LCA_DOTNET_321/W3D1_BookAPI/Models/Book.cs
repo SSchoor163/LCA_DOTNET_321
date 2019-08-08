@@ -11,9 +11,10 @@ namespace W3D1_BookAPI.Models
        public int Id { get; set; }
         [Required]
        public string Title { get; set; }
+       [Required]
+        public string Category { get; set; }
         [Required]
-       public string Author { get; set; }
-        [Required]
-       public string Category { get; set; }
+       public int AuthorId { get; set; }
+       public Author Author { get; set; }
     }
 }

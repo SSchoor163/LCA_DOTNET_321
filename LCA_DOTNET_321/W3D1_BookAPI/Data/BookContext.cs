@@ -12,6 +12,7 @@ namespace W3D1_BookAPI.Data
     {
         //local DB copy
         public DbSet<Book> Books { get; set; } 
+        public DbSet<Author> Authors { get; set; }
 
         //Database link
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,19 +31,43 @@ namespace W3D1_BookAPI.Data
                 new Book
                 {
                     Id = 1,
-                    Author = "Terry Goodkind",
                     Category = "Fantasy",
-                    Title = "The Stone of Tears"
+                    Title = "The Stone of Tears",
+                    AuthorId = 1
+                },
+                new Book {
+                    Id = 2,
+                    Category = "Fantasy",
+                    Title = "The Seeker of Truth",
+                    AuthorId = 1
                 },
                 new Book
                 {
-                    Id = 2,
-                    Author = "Charles Darwin",
-                    Title = "The Origin of Species",
-                    Category = "Science"
+                    Id = 3, 
+                    Title = "The Foundation",
+                    Category = "Scifi",
+                    AuthorId = 2
                 }
 
                 );
+            modelBuilder.Entity<Author>().HasData(
+
+                new Author
+                {
+                    Id = 1,
+                    FirstName = "Terry",
+                    LastName = "Goodkind",
+                    BirthDate = new DateTime(1948, 5, 1),
+                },
+                new Author
+                {
+                    Id = 2,
+                    FirstName = "Isaac",
+                    LastName = "Asimov",
+                    BirthDate = new DateTime(1920, 1, 2)
+                }
+
+                ) ;
 
         }
 

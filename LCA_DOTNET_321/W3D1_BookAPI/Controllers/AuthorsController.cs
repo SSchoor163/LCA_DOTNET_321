@@ -30,9 +30,9 @@ public class AuthorController : ControllerBase
     [HttpGet("{id}")]
     public ActionResult Get(int id)
     {
-        var book = AuthorServices.GetId(id);
-        if (book == null) return NotFound();
-        return Ok(book);
+        var author = AuthorServices.GetId(id);
+        if (author == null) return NotFound();
+        return Ok(author);
     }
 
     // POST api/values

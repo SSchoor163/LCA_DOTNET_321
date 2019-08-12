@@ -6,6 +6,7 @@ using W3D1_BookAPI.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using W3D1_BookAPI.APIModel;
 
 namespace W3D1_BookAPI.Controllers
 {
@@ -22,39 +23,56 @@ namespace W3D1_BookAPI.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok(BookServices.GetAll());
+            var books = BookServices.GetAll().ToApiModels();
+            return Ok(books);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
-            var book = BookServices.GetId(id);
+            var book = BookServices.GetId(id).ToApiModel();
             if (book == null) return NotFound();
             return Ok(book);
         }
 
+        //Get api/author/{authorId}/books
+        [HttpGet("/api/authors/{authorId}/books")]
+        public IActionResult GetBooksForAuthor(int authorId)
+        {
+            var bookServices = BookServices.GetBooksForAuthor(authorId).ToApiModels();
+            return Ok(BookServices);
+        }
+
+        //Get api/publisher/{publisherId}/books
+        [HttpGet("/api/publisher/{publisherId}/books")]
+        public IActionResult GetBooksForPublisher(int publisherId)
+        {
+            var bookServices = BookServices.GetBooksForPublisher(publisherId).ToApiModels();
+            return Ok(bookServices);
+        }
+
         // POST api/values
         [HttpPost]
-        public ActionResult Post([FromBody] Book book)
+        public ActionResult Post([FromBody] BookModel bookModel)
         {
             try
             {
-                BookServices.Add(book);
+                BookServices.Add(bookModel.ToDomainModel());
             }catch(System.Exception ex)
             {
                 ModelState.AddModelError("addBook", ex.Message);
                 return BadRequest(ModelState);
             }
-            return CreatedAtAction("Get", new { Id = book.Id }, book);
+            return CreatedAtAction("Get", new { Id = bookModel.Id }, bookModel);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Book book)
+        public ActionResult Put(int id, [FromBody] BookModel bookModel)
         {
-            book.Id = id;
-            var Book = BookServices.Update(book);
+            bookModel.Id = id;
+            var Book = BookServices.Update(bookModel.ToDomainModel());
             if (Book == null) return NotFound();
             return Ok(Book);
         }

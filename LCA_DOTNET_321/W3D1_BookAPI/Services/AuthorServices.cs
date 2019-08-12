@@ -11,23 +11,23 @@ namespace W3D1_BookAPI.Services
     public class AuthorServices :IAuthorService
     {
         //Database initialization
-        private readonly BookContext _bookContext;
+        private readonly BookContext BookContext;
 
         //loosely tied constructor to db
         public AuthorServices(BookContext bookContext)
         {
-            _bookContext = bookContext;
+            BookContext = bookContext;
         }
         // return whole context list
-        public IEnumerable<Author> GetAll()
+        public List<Author> GetAll()
         {
-            return _bookContext.Authors.ToList();
+            return BookContext.Authors.ToList();
         }
 
-        //return specific book from context list, if not found return null
+        //return specific author from context list, if not found return null
         public Author GetId(int Id)
         {
-            Author author = _bookContext.Authors
+            Author author = BookContext.Authors
                 .Include(p=>p.Books)
                 .FirstOrDefault(p=>p.Id==Id);
             if (author == null)
@@ -39,8 +39,8 @@ namespace W3D1_BookAPI.Services
         //set newbook id to next valid id. add newbook to context list. save database context, return newbook
         public Author Add(Author NewAuthor)
         {
-            _bookContext.Authors.Add(NewAuthor);
-            _bookContext.SaveChanges();
+            BookContext.Authors.Add(NewAuthor);
+            BookContext.SaveChanges();
             return NewAuthor;
 
         }
@@ -48,7 +48,7 @@ namespace W3D1_BookAPI.Services
         public Author Update(Author UpdatedAuthor)
         {
             // find if current entry is null and save its reference location
-            var currentAuthor = _bookContext.Authors.Find(UpdatedAuthor.Id);
+            var currentAuthor = BookContext.Authors.Find(UpdatedAuthor.Id);
 
             //return null if current is null
             if (currentAuthor == null)
@@ -57,16 +57,16 @@ namespace W3D1_BookAPI.Services
             }
 
             //update entry's current values with new values from updatedbook
-            _bookContext.Entry(currentAuthor).CurrentValues.SetValues(UpdatedAuthor);
+            BookContext.Entry(currentAuthor).CurrentValues.SetValues(UpdatedAuthor);
 
-            _bookContext.Authors.Update(currentAuthor);
-            _bookContext.SaveChanges();
+            BookContext.Authors.Update(currentAuthor);
+            BookContext.SaveChanges();
             return currentAuthor;
         }
         public void Remove(Author DeleteAuthor)
         {
-            _bookContext.Authors.Remove(DeleteAuthor);
-            _bookContext.SaveChanges();
+            BookContext.Authors.Remove(DeleteAuthor);
+            BookContext.SaveChanges();
         }
 
     }

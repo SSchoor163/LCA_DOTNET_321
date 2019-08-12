@@ -8,7 +8,7 @@ namespace W3D1_BookAPI.Services
 {
     public interface IAuthorService
     {
-        IEnumerable<Author> GetAll();
+        List<Author> GetAll();
         Author GetId(int Id);
         Author Add(Author NewAuthor);
         Author Update(Author UpdatedAuthor);

@@ -10,8 +10,10 @@ namespace W3D1_BookAPI.Services
 {
     public interface IBookServices
     {
-        IEnumerable<Book> GetAll();
+        List<Book> GetAll();
         Book GetId(int Id);
+        List<Book> GetBooksForAuthor(int authorId);
+        List<Book> GetBooksForPublisher(int publisherId);
         Book Add(Book NewBook);
         Book Update(Book UpdatedBook);
         void Remove(Book DeleteBook);

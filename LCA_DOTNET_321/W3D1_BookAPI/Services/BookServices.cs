@@ -19,7 +19,7 @@ namespace W3D1_BookAPI.Services
             _bookContext = bookContext;
         }
        // return whole context list
-        public IEnumerable<Book> GetAll()
+        public List<Book> GetAll()
         {
             return _bookContext.Books.ToList();
         }
@@ -36,6 +36,27 @@ namespace W3D1_BookAPI.Services
             }
             return book;
         }
+
+        //return list of books for a Author
+        public List<Book> GetBooksForAuthor(int authorId)
+        {
+            return _bookContext.Books
+                .Include(b => b.Author)
+                .Include(b => b.Publisher)
+                .Where(b => b.AuthorId == authorId)
+                .ToList();
+        }
+
+        //Return list of books for a publisher
+        public List<Book> GetBooksForPublisher(int publisherId)
+        {
+            return _bookContext.Books
+                .Include(b => b.Author)
+                .Include(b => b.Publisher)
+                .Where(b => b.PublisherId == publisherId)
+                .ToList();
+        }
+
         //set newbook id to next valid id. add newbook to context list. save database context, return newbook
         public Book Add(Book NewBook)
         {

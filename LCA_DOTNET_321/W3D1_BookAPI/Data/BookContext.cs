@@ -13,6 +13,7 @@ namespace W3D1_BookAPI.Data
         //local DB copy
         public DbSet<Book> Books { get; set; } 
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
 
         //Database link
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,13 +32,13 @@ namespace W3D1_BookAPI.Data
                 new Book
                 {
                     Id = 1,
-                    Category = "Fantasy",
+                    Genre = "Fantasy",
                     Title = "The Stone of Tears",
                     AuthorId = 1
                 },
                 new Book {
                     Id = 2,
-                    Category = "Fantasy",
+                    Genre = "Fantasy",
                     Title = "The Seeker of Truth",
                     AuthorId = 1
                 },
@@ -45,7 +46,7 @@ namespace W3D1_BookAPI.Data
                 {
                     Id = 3, 
                     Title = "The Foundation",
-                    Category = "Scifi",
+                    Genre = "Scifi",
                     AuthorId = 2
                 }
 

@@ -36,6 +36,7 @@ namespace W3D1_BookAPI
             services.AddDbContext<BookContext>();
             services.AddScoped<IBookServices, BookServices>();
             services.AddScoped<IAuthorService, AuthorServices>();
+            services.AddScoped<IPublisherServices, PublisherServices>();
             
         }
 

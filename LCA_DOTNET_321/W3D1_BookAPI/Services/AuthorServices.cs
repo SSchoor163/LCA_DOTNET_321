@@ -28,7 +28,6 @@ namespace W3D1_BookAPI.Services
         public Author GetId(int Id)
         {
             Author author = BookContext.Authors
-                .Include(p=>p.Books)
                 .FirstOrDefault(p=>p.Id==Id);
             if (author == null)
             {

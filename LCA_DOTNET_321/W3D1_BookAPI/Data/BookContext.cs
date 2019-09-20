@@ -34,19 +34,28 @@ namespace W3D1_BookAPI.Data
                     Id = 1,
                     Genre = "Fantasy",
                     Title = "The Stone of Tears",
-                    AuthorId = 1
+                    OriginalLanguage = "English",
+                    PublicationYear = 1996,
+                    AuthorId = 1,
+                    PublisherId = 1
                 },
                 new Book {
                     Id = 2,
                     Genre = "Fantasy",
-                    Title = "The Seeker of Truth",
-                    AuthorId = 1
+                    Title = "Wizard's First Rule",
+                    OriginalLanguage = "English",
+                    PublicationYear = 1994,
+                    AuthorId = 1,
+                    PublisherId = 1
                 },
                 new Book
                 {
                     Id = 3, 
-                    Title = "The Foundation",
+                    Title = "Foundation",
                     Genre = "Scifi",
+                    OriginalLanguage = "English",
+                    PublicationYear = 1951,
+                    PublisherId = 2,
                     AuthorId = 2
                 }
 
@@ -65,10 +74,29 @@ namespace W3D1_BookAPI.Data
                     Id = 2,
                     FirstName = "Isaac",
                     LastName = "Asimov",
-                    BirthDate = new DateTime(1920, 1, 2)
+                    BirthDate = new DateTime(1920, 1, 2),
                 }
 
                 ) ;
+            modelBuilder.Entity<Publisher>().HasData(
+                new Publisher
+                {
+                    Id = 1,
+                    Name = "Tor Fantasy",
+                    CountryOfOrigin = "United States",
+                    HeadQuartersLocation = "New York, NY",
+                    FoundedYear = 1980
+                },
+                new Publisher
+                {
+                    Id = 2,
+                    Name = "Gnome Press",
+                    CountryOfOrigin = "United States",
+                    FoundedYear = 1948,
+                    HeadQuartersLocation = "New York, Ny"
+                }
+
+            );
 
         }
 

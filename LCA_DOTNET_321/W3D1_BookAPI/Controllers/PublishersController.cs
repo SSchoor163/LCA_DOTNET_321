@@ -17,7 +17,7 @@ namespace W3D1_BookAPI.Controllers
     {
 
         private readonly IPublisherServices PublisherServices;
-        PublishersController(PublisherServices publisherServices)
+        public PublishersController(IPublisherServices publisherServices)
         {
             PublisherServices = publisherServices;
         }

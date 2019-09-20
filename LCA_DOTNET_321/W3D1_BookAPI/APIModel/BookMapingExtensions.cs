@@ -18,9 +18,9 @@ namespace W3D1_BookAPI.APIModel
                 PublicationYear = book.PublicationYear,
                 Title = book.Title,
                 AuthorId = book.AuthorId,
-                Author = $"{book.Author.LastName} , {book.Author.FirstName}",
+                Author = $"{book.Author?.LastName} , {book.Author?.FirstName}",
                 PublisherId = book.PublisherId,
-                Publisher = $"{book.Publisher.Name}, {book.Publisher.HeadQuartersLocation}"
+                Publisher = $"{book.Publisher?.Name}, {book.Publisher?.HeadQuartersLocation}"
             };
         }
 

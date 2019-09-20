@@ -12,10 +12,10 @@ using W3D1_BookAPI.Services;
 namespace W3D1_BookAPI.Controllers
 {[Route("api/[controller]")]
 [ApiController]
-public class AuthorController : ControllerBase
+public class AuthorsController : ControllerBase
 {
     private readonly IAuthorService AuthorServices;
-    public AuthorController(IAuthorService authorServices)
+    public AuthorsController(IAuthorService authorServices)
     {
         AuthorServices = authorServices;
     }

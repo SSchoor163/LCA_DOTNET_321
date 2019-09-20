@@ -41,14 +41,16 @@ namespace W3D1_BookAPI.Controllers
         public IActionResult GetBooksForAuthor(int authorId)
         {
             var bookServices = BookServices.GetBooksForAuthor(authorId).ToApiModels();
-            return Ok(BookServices);
+            if (bookServices == null) return NotFound();
+            return Ok(bookServices);
         }
 
         //Get api/publisher/{publisherId}/books
-        [HttpGet("/api/publisher/{publisherId}/books")]
+        [HttpGet("/api/publishers/{publisherId}/books")]
         public IActionResult GetBooksForPublisher(int publisherId)
         {
             var bookServices = BookServices.GetBooksForPublisher(publisherId).ToApiModels();
+            if (bookServices == null) return NotFound();
             return Ok(bookServices);
         }
 

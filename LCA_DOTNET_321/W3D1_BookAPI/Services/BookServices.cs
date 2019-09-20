@@ -21,7 +21,10 @@ namespace W3D1_BookAPI.Services
        // return whole context list
         public List<Book> GetAll()
         {
-            return _bookContext.Books.ToList();
+            return _bookContext.Books.
+                Include(b=>b.Author).
+                Include(b=>b.Publisher)
+                .ToList();
         }
         
         //return specific book from context list, if not found return null
@@ -29,6 +32,7 @@ namespace W3D1_BookAPI.Services
         {
             Book book = _bookContext.Books
                 .Include(x=>x.Author)
+                .Include(x=>x.Publisher)
                 .FirstOrDefault(x=>x.Id == Id);
             if(book == null)
             {
@@ -40,11 +44,12 @@ namespace W3D1_BookAPI.Services
         //return list of books for a Author
         public List<Book> GetBooksForAuthor(int authorId)
         {
-            return _bookContext.Books
+            var books = _bookContext.Books
                 .Include(b => b.Author)
                 .Include(b => b.Publisher)
                 .Where(b => b.AuthorId == authorId)
                 .ToList();
+            return books;
         }
 
         //Return list of books for a publisher

@@ -12,7 +12,7 @@ namespace W3D1_BookAPI.Services
     {
         private readonly BookContext BookContext;
         
-        PublisherServices(BookContext bookContext)
+       public PublisherServices(BookContext bookContext)
         {
             BookContext = bookContext;
         }
